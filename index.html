@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>גן־בית · פעילויות התפתחותיות יומיות לתינוק/ת</title>
+<meta name="description" content="גן־בית · כל יום, כמה רגעים קצרים של פעילות התפתחותית מותאמת-גיל לתינוק/ת בגיל 0 עד 3, להעשרה וללמידה דרך משחק בבית.">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* set theme before paint to avoid a flash; default = light (honey), respect saved choice + system pref */
+  (function(){try{
+    var t=localStorage.getItem('gb-theme');
+    if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    document.documentElement.setAttribute('data-theme',t);
+  }catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
+<style>
+  :root{
+    color-scheme:light;
+    --paper:#FBF7F1; --paper2:#F2EADF; --card:#FFFFFF; --ink:#2F2C26; --ink2:#6B6458; --ink3:#A89C88;
+    --honey:#E8A33D; --honey600:#D88A22; --honey700:#B26F12; --honey100:#F7E7C9; --honeyTint:#FBEFD7;
+    --honeyTintBorder:var(--honeyTintBorder); --honeyTintText:var(--honeyTintText);
+    --hair:#EBE2D1; --green:#5FB3A8;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',"Heebo",sans-serif;
+  }
+  /* Dark mode — mirrors the app's GBTheme dark palette (warm dusk + honey panels) */
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1A1714;            /* gbPaper dark */
+    --paper2:#221E1A;           /* gbPaper2 dark */
+    --card:#2A251F;             /* gbCard dark */
+    --ink:#F2ECE1;              /* gbInk dark */
+    --ink2:#B6AEA0;             /* gbInk2 dark */
+    --ink3:#7A736A;             /* gbInk3 dark */
+    --honey:#E8A33D;            /* signature stays for the primary button */
+    --honey600:#D88A22;
+    --honey700:#E8B968;         /* gbHoneyText dark — honey emphasis reads light on dark */
+    --honeyTint:#3A2E18;        /* gbHoneyCard/Safety fill dark — warm honey panel */
+    --honeyTintBorder:#5C4A24;  /* gbHoneyCardBorder dark */
+    --honeyTintText:#E8B968;    /* honey text on the dark panel */
+    --hair:#3A332B;             /* gbHairline dark */
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;
+        transition:background-color .35s ease,color .35s ease}
+  .feat,.join .card,.strip,.navcta,.hero .eyebrow,.theme-toggle,footer{
+        transition:background-color .35s ease,border-color .35s ease,color .35s ease}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  a{color:inherit;text-decoration:none}
+
+  /* nav */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+  .brand{display:flex;align-items:center;gap:11px}
+  .mark{width:44px;height:44px;border-radius:12px;object-fit:cover;display:block;
+        box-shadow:0 6px 16px -6px rgba(216,138,34,.55)}
+  .brand b{font-size:20px;font-weight:800}
+  .nav-actions{display:flex;align-items:center;gap:10px}
+  /* Theme toggle — shared GTP design (rounded-square, rotating half-disc icon), honey-tinted */
+  .theme-toggle{width:38px;height:38px;border-radius:999px;border:1px solid var(--honeyTintBorder);
+        background:var(--honeyTint);color:var(--honey700);cursor:pointer;display:grid;place-items:center;
+        -webkit-tap-highlight-color:transparent;
+        transition:background-color .35s ease,border-color .16s ease,color .16s ease}
+  .theme-toggle:hover{border-color:var(--honey600);color:var(--honey600)}
+  .theme-toggle .tg-icon{width:18px;height:18px;transition:transform .35s ease}
+  :root[data-theme="dark"] .theme-toggle .tg-icon{transform:rotate(180deg)}
+  .navcta{font-size:14px;font-weight:700;color:var(--honey700);background:var(--honeyTint);
+        border:1px solid var(--honeyTintBorder);border-radius:999px;padding:8px 16px}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:40px 0 50px}
+  .heroCol{container-type:inline-size;min-width:0}
+  .hero .eyebrow{display:inline-block;font-size:13px;font-weight:700;color:var(--honey700);
+        background:var(--honeyTint);border:1px solid var(--honeyTintBorder);border-radius:999px;padding:5px 13px;margin-bottom:16px}
+  .hero h1{font-size:clamp(22px,7cqw,40px);line-height:1.18;font-weight:800;letter-spacing:-.5px}
+  .hero h1 .ln{display:block;white-space:nowrap}          /* each line stays on ONE line */
+  .hero .keep{white-space:nowrap}                          /* impactful phrase never splits */
+  .hero h1 .hl{color:var(--honey700)}
+  .hero p.lead{font-size:17px;color:var(--ink2);margin:16px 0 26px;max-width:520px}
+  .cta-row{display:flex;gap:13px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:16px;border-radius:15px;
+        padding:15px 26px;transition:transform .12s ease, box-shadow .12s ease}
+  .btn-primary{background:linear-gradient(180deg,var(--honey),var(--honey600));color:#fff;
+        box-shadow:0 12px 26px -10px rgba(216,138,34,.85)}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 16px 30px -10px rgba(216,138,34,.9)}
+  .meta-note{font-size:12.5px;color:var(--ink3);margin-top:12px}
+
+  /* phone mock */
+  .phone{justify-self:center;width:260px;background:#0c0c10;border-radius:40px;padding:9px;
+        box-shadow:0 30px 60px -24px rgba(60,40,10,.45)}
+  .screen{width:100%;display:block;border-radius:32px;background:var(--paper)}
+  .screen-dark{display:none}
+  :root[data-theme="dark"] .screen-light{display:none}
+  :root[data-theme="dark"] .screen-dark{display:block}
+
+  /* sections */
+  section.block{padding:54px 0}
+  .h2{font-size:clamp(24px,4.4vw,30px);font-weight:800;text-align:center;letter-spacing:-.3px}
+  .sub{text-align:center;color:var(--ink2);font-size:16px;max-width:600px;margin:12px auto 0}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:38px}
+  .feat{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:22px 22px}
+  .feat .fi{width:46px;height:46px;border-radius:13px;background:var(--honeyTint);display:flex;align-items:center;
+        justify-content:center;margin-bottom:12px;color:var(--honey700)}
+  .feat .fi svg{width:24px;height:24px;display:block}
+  .feat h3{font-size:18px;font-weight:800;margin-bottom:5px}
+  .feat p{font-size:14.5px;color:var(--ink2)}
+
+  /* diary showcase */
+  .diaryshow{display:flex;gap:38px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .diarypoints{list-style:none;max-width:330px;display:flex;flex-direction:column;gap:15px}
+  .diarypoints li{font-size:15px;color:var(--ink2);line-height:1.5;padding-inline-start:14px;border-inline-start:3px solid var(--honey)}
+  .diarypoints li b{color:var(--ink);font-weight:800}
+
+  /* sources/honest strip */
+  .strip{background:var(--honeyTint);border-top:1px solid var(--honeyTintBorder);border-bottom:1px solid var(--honeyTintBorder)}
+  .strip .wrap{padding:30px 22px;text-align:center}
+  .strip h3{font-size:18px;font-weight:800;color:var(--honey700)}
+  .strip p{font-size:14px;color:var(--honeyTintText);max-width:680px;margin:8px auto 0}
+  .flags{margin-top:12px;font-size:13px;color:var(--honeyTintText)}
+
+  /* join */
+  .join{text-align:center;padding:64px 0}
+  .join .card{background:var(--card);border:1px solid var(--hair);border-radius:24px;padding:40px 28px;max-width:620px;margin:0 auto}
+  .join h2{font-size:28px;font-weight:800}
+  .join p{color:var(--ink2);font-size:15.5px;margin:12px auto 24px;max-width:460px}
+  .join .steps{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:22px;font-size:12.5px;color:var(--ink3)}
+  .join .steps span{display:flex;align-items:center;gap:6px}
+
+  footer{border-top:1px solid var(--hair);padding:26px 0;text-align:center;color:var(--ink3);font-size:13px}
+  footer a{color:var(--honey700);font-weight:600}
+
+  /* tablet (portrait iPad etc.) */
+  @media(max-width:900px){
+    section.block{padding:46px 0}
+    .hero{gap:28px;padding:30px 0 42px}
+    .features{gap:14px}
+    .join{padding:52px 0}
+  }
+  /* phones / mWeb */
+  @media(max-width:680px){
+    nav{padding:16px 0}
+    .hero{grid-template-columns:1fr;gap:26px;text-align:center;padding:16px 0 30px}
+    .hero p.lead{margin-inline:auto}
+    .cta-row{justify-content:center}
+    .features{grid-template-columns:1fr}
+    .phone{order:-1;width:min(232px,72vw)}
+    /* full-width, easy-to-tap CTAs on mobile */
+    .btn{width:100%;max-width:340px;justify-content:center}
+    .join .card{padding:30px 20px;border-radius:20px}
+    .strip .wrap{padding:26px 18px}
+    section.block{padding:40px 0}
+    .join{padding:46px 0}
+  }
+  @media(max-width:380px){
+    .wrap{padding:0 15px}
+    .brand b{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <nav>
+      <div class="brand"><img class="mark" src="app-icon.png" alt="גן־בית" width="44" height="44"><b>גן־בית</b></div>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" type="button" title="החלפת מצב תצוגה" aria-label="מעבר למצב כהה">
+          <svg class="tg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3 a9 9 0 0 1 0 18 Z" fill="currentColor"/></svg>
+        </button>
+        <a class="navcta" href="#join">הצטרפו לבטא</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="heroCol">
+        <h1><span class="ln">כל יום, כמה <span class="hl">רגעים קטנים</span></span><span class="ln">שהופכים לזיכרונות יקרים</span></h1>
+        <p class="lead">בכל יום גן־בית מזמינה אתכם לחוות רגעים קסומים עם ילדכם: פעילויות קצרות ומותאמות לגילאי 0 עד 3, להעשרה, ללמידה דרך משחק, ולקרבה. <span class="keep">בלי לחץ, בקצב שלכם.</span></p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://testflight.apple.com/join/qSTFGMKM">הצטרפו לבטא</a>
+        </div>
+        <div class="meta-note">חינמי, לאייפון, דרך TestFlight. כל הורה מוזמן.</div>
+      </div>
+
+      <!-- real app screenshot in a phone frame -->
+      <div class="phone">
+        <img class="screen screen-light" src="app-today.png?v=6" alt="מסך 'היום' באפליקציית גן־בית">
+        <img class="screen screen-dark" src="app-today-dark.png?v=6" alt="מסך 'היום' באפליקציית גן־בית במצב כהה">
+      </div>
+    </header>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="block">
+    <div class="wrap">
+      <div class="h2">מה יש בפנים</div>
+      <p class="sub">אפליקציה חכמה ופשוטה שהופכת התפתחות לרגע של קרבה, לא למשימה.</p>
+      <div class="features">
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2a1 1 0 0 0-1 1v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3h-1V3a1 1 0 1 0-2 0v1H8V3a1 1 0 0 0-1-1Zm13 8H4v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8Z"/></svg></div>
+          <h3>מותאם לגיל</h3><p>הפעילויות מותאמות לילדכם, מיילוד ועד גיל 3, ופוגשות אותם בדיוק במקום שבו הם נמצאים היום.</p>
+        </div>
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.3l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.49L12 21.3Z"/></svg></div>
+          <h3>כל יום, בסבלנות וברכות</h3><p>כמה רגעים קצרים ביום מספיקים. לתינוקות הקטנים פחות פעילויות, חמות יותר, בלי תחושת "לא הספקתי".</p>
+        </div>
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 2H7a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 18H7a1 1 0 0 1 0-2h11v2Z"/></svg></div>
+          <h3>יומן זיכרונות</h3><p>כל פעילות או הערה אישית נאספות ונשמרות ביומן פרטי, שבונה את סיפור ההתפתחות של ילדכם, במילים שלכם.</p>
+        </div>
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l7 2.6V11c0 4.7-3 8.3-7 9.9C8 19.3 5 15.7 5 11V4.6L12 2Z"/></svg></div>
+          <h3>בטוח ומחושב</h3><p>כי שלומם ובטחונם קודם לכל. לצד כל פעילות יש טיפ בטיחות קצר וממוקד, והכול בהשגחתכם ולשיקולכם, מותאם לקצב של ילדכם.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIARY SHOWCASE -->
+  <section class="block">
+    <div class="wrap">
+      <div class="h2">מזכרת, במילים שלכם</div>
+      <p class="sub">אוסף קטן של רגעים, שהופך עם הזמן למשהו גדול.</p>
+      <div class="diaryshow">
+        <div class="phone">
+          <img class="screen screen-light" src="app-diary.png?v=7" alt="מסך היומן באפליקציית גן־בית">
+          <img class="screen screen-dark" src="app-diary-dark.png?v=7" alt="מסך היומן באפליקציית גן־בית במצב כהה">
+        </div>
+        <ul class="diarypoints">
+          <li><b>על היום הזה</b>: רגע מהעבר שחוזר אליכם, למשל "לפני שבוע" או "לפני שנה".</li>
+          <li><b>בקול שלכם</b>: ההערות שכתבתם הופכות לסיפור ההתפתחות.</li>
+          <li><b>סיכום חודשי</b>: תמונת מצב חמה, נבנית לבד בסוף כל חודש.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONEST / SOURCES -->
+  <div class="strip"><div class="wrap">
+    <h3>נשען על מקורות מוכרים, בכבוד ובזהירות</h3>
+    <p>הפעילויות נכתבו והותאמו באופן עצמאי, בהשראת מידע והמלצות התפתחותיות הזמינים לציבור, ובהם הנחיות טיפת חלב/משרד הבריאות ומשרד החינוך בישראל, וכן מקורות בינלאומיים (CDC, Head Start ELOF). זו אפליקציה פרטית, ואינה תחליף לייעוץ רפואי או מקצועי.</p>
+    <div class="flags">🇮🇱 טיפת חלב · 🇮🇱 משרד החינוך · 🇺🇸 CDC · 🇺🇸 Head Start ELOF</div>
+  </div></div>
+
+  <!-- JOIN -->
+  <section class="join" id="join">
+    <div class="wrap"><div class="card">
+      <h2>בואו נגדל יחד</h2>
+      <p>בנינו את גן־בית בשביל הילדים שלנו, ועכשיו אנחנו שמחים לחלוק אותה גם אתכם. כרגע היא בגרסת ניסיון חינמית ופתוחה לכולם. הצטרפו, נסו, וספרו לנו מה עבד ומה לשפר. כל משוב עוזר לנו לגדול יחד.</p>
+      <a class="btn btn-primary" href="https://testflight.apple.com/join/qSTFGMKM">הצטרפו לבטא</a>
+      <div class="steps">
+        <span>① הורידו TestFlight</span>
+        <span>② הקישו על הקישור</span>
+        <span>③ התקינו והתחילו</span>
+      </div>
+    </div></div>
+  </section>
+
+  <footer>
+    גן־בית · נבנה באהבה לגיל הרך · <a href="#join">הצטרפו לבטא</a><br>
+    <span style="font-size:11.5px">© 2026 · אפליקציה פרטית · אינה ייעוץ רפואי</span>
+  </footer>
+
+  <script>
+    (function(){
+      var root=document.documentElement;
+      var btn=document.getElementById('themeToggle');
+      if(!btn) return;
+      function sync(){
+        var dark=root.getAttribute('data-theme')==='dark';
+        btn.setAttribute('aria-label',dark?'מעבר למצב בהיר':'מעבר למצב כהה');
+      }
+      sync();
+      btn.addEventListener('click',function(){
+        var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+        root.setAttribute('data-theme',next);
+        try{localStorage.setItem('gb-theme',next);}catch(e){}
+        sync();
+      });
+    })();
+  </script>
+</body>
+</html>

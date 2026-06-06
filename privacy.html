@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>גן־בית · מדיניות פרטיות</title>
+<meta name="description" content="מדיניות הפרטיות של גן־בית. המידע נשמר במכשיר שלכם, ללא איסוף, מעקב או פרסומות.">
+<meta name="color-scheme" content="light dark">
+<script>
+  (function(){try{
+    var t=localStorage.getItem('gb-theme');
+    if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    document.documentElement.setAttribute('data-theme',t);
+  }catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
+<style>
+  :root{
+    color-scheme:light;
+    --paper:#FBF7F1; --card:#FFFFFF; --ink:#2F2C26; --ink2:#6B6458; --ink3:#A89C88;
+    --honey:#E8A33D; --honey700:#B26F12; --hair:#EBE2D1;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',"Heebo",sans-serif;
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1A1714; --card:#221E1A; --ink:#EFE7DA; --ink2:#B8AC99; --ink3:#7C7264;
+    --honey:#F0B95A; --honey700:#F0B95A; --hair:#332C24;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:28px 22px 64px}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .toggle{display:inline-flex;border:1px solid var(--hair);border-radius:999px;overflow:hidden}
+  .toggle button{appearance:none;border:0;background:transparent;color:var(--ink2);font:inherit;font-size:13px;font-weight:700;padding:7px 14px;cursor:pointer}
+  .toggle button[aria-pressed="true"]{background:var(--honey);color:#fff}
+  h1{font-size:26px;margin:6px 0 2px}
+  .updated{color:var(--ink3);font-size:13px;margin:0 0 26px}
+  h2{font-size:18px;margin:30px 0 8px;color:var(--honey700)}
+  p,li{color:var(--ink2);font-size:16px}
+  ul{padding-inline-start:22px}
+  a{color:var(--honey700)}
+  .doc[hidden]{display:none}
+  .doc[lang="en"]{direction:ltr;text-align:left}
+  footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--hair);color:var(--ink3);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--ink3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="./index.html"><img src="app-icon.png" alt="גן־בית"><span>גן־בית</span></a>
+    <div class="toggle" role="group" aria-label="שפה / Language">
+      <button id="he" aria-pressed="true" onclick="setLang('he')">עברית</button>
+      <button id="en" aria-pressed="false" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+
+  <!-- Hebrew -->
+  <article class="doc" lang="he" dir="rtl">
+    <h1>מדיניות פרטיות</h1>
+    <p class="updated">עדכון אחרון: יוני 2026</p>
+
+    <h2>מי אנחנו</h2>
+    <p>"גן־בית" היא אפליקציה המציעה רעיונות לפעילויות התפתחותיות יומיות לתינוקות ולפעוטות. האפליקציה פותחה ומופעלת על ידי מפתח עצמאי ("אנחנו", "המפתח"). ליצירת קשר בנושאי פרטיות: <a href="mailto:tomeriqo@gmail.com">tomeriqo@gmail.com</a>.</p>
+
+    <h2>העיקרון המנחה: המידע נשאר אצלכם</h2>
+    <p>גן־בית בנויה סביב פרטיות. כברירת מחדל, כל המידע שאתם מזינים נשמר מקומית במכשיר שלכם בלבד. איננו אוספים אותו, איננו רואים אותו, ואיננו שולחים אותו לשרת שלנו. אין באפליקציה חשבונות משתמש, אין מערכת לניתוח שימוש, אין פרסומות, ואין רכיבי מעקב או ספריות צד שלישי שאוספים מידע.</p>
+
+    <h2>איזה מידע נשמר במכשיר</h2>
+    <ul>
+      <li>שם התינוק/ת ותאריך הלידה, שמזינים בעת ההגדרה.</li>
+      <li>הערות אישיות שאתם בוחרים לכתוב לצד פעילויות.</li>
+      <li>תמונות שתבחרו לצרף לזיכרונות (בגרסאות שתומכות בכך).</li>
+      <li>העדפות באפליקציה, כגון שעת התזכורת היומית והאם היא מופעלת.</li>
+    </ul>
+    <p>המידע משמש אך ורק כדי להציג לכם את התוכן בתוך האפליקציה ולשמור את יומן ההתפתחות שלכם.</p>
+
+    <h2>סנכרון לענן (אופציונלי)</h2>
+    <p>בגרסאות שתומכות בסנכרון בין מכשירים, תוכלו לבחור לאחסן עותק של המידע שלכם בחשבון הענן הפרטי שלכם של הפלטפורמה: ב־iOS דרך חשבון ה־iCloud הפרטי שלכם של Apple. במצב זה המידע נשמר בחשבון הפרטי שלכם, מוגן על ידי הפלטפורמה, ונגיש רק לכם. גם אז איננו ניגשים למידע שלכם ואיננו מאחסנים אותו אצלנו.</p>
+    <p>הערה לגבי Android: כאשר נוסיף סנכרון ב־Android, הוא יישמר על אותו עיקרון, אחסון בחשבון הענן הפרטי שלכם ללא גישה שלנו למידע. נעדכן מדיניות זו כך שתתאר במדויק את המנגנון, לפני שהתכונה תופעל.</p>
+
+    <h2>משוב (פנייה יזומה שלכם)</h2>
+    <p>אם תבחרו לשלוח לנו משוב מתוך האפליקציה, ייפתח יישום הדואר שלכם עם הודעה מוכנה. כדי לעזור לנו להבין את ההקשר, ההודעה כוללת את גרסת האפליקציה, דגם המכשיר וטווח הגיל של התינוק/ת. ההודעה נשלחת רק אם תבחרו לשלוח אותה, מתוך חשבון הדואר שלכם, ואינה כוללת את שם התינוק/ת או את ההערות שלכם.</p>
+
+    <h2>שיתוף</h2>
+    <p>אם תבחרו לשתף זיכרון או תמונה מתוך האפליקציה (בגרסאות שתומכות בכך), אתם שולחים את התוכן ליעד או לאפליקציה שאתם בוחרים. מרגע השיתוף, התוכן כפוף למדיניות הפרטיות של אותו שירות או נמען, ואינו בשליטתנו.</p>
+
+    <h2>מידע על ילדים</h2>
+    <p>גן־בית מיועדת לשימוש על ידי הורים ומטפלים בוגרים, לא על ידי ילדים. המידע על התינוק/ת שאתם מזינים נשמר במכשיר שלכם (ובחשבון הענן הפרטי שלכם, אם הפעלתם סנכרון), ואינו נאסף על ידינו. אתם, כהורים או אפוטרופוסים, שולטים במידע זה ויכולים למחוק אותו בכל עת.</p>
+
+    <h2>מחיקת מידע ושליטה</h2>
+    <ul>
+      <li>תוכלו לערוך או למחוק את פרטי התינוק/ת מתוך מסך ההגדרות.</li>
+      <li>הסרת האפליקציה מהמכשיר מוחקת את כל המידע המקומי.</li>
+      <li>אם הפעלתם סנכרון לענן, מחיקת המידע מחשבון הענן הפרטי שלכם מתבצעת דרך הגדרות הענן של הפלטפורמה.</li>
+    </ul>
+
+    <h2>אבטחה</h2>
+    <p>המידע נשמר במכשיר שלכם ומוגן באמצעי האבטחה של מערכת ההפעלה. בסנכרון לענן, המידע מוגן על ידי חשבון הענן הפרטי שלכם. שימו לב שאף שיטת אחסון אינה בטוחה לחלוטין, ואיננו יכולים להבטיח אבטחה מוחלטת.</p>
+
+    <h2>שינויים במדיניות</h2>
+    <p>נעדכן מדיניות זו אם תכונות האפליקציה ישתנו, למשל עם הוספת תמונות, סנכרון או שיתוף. תאריך העדכון האחרון יופיע בראש המסמך, ושינוי מהותי יוצג גם בתוך האפליקציה.</p>
+
+    <h2>יצירת קשר</h2>
+    <p>בכל שאלה בנושא פרטיות, אתם מוזמנים לפנות אלינו: <a href="mailto:tomeriqo@gmail.com">tomeriqo@gmail.com</a></p>
+  </article>
+
+  <!-- English -->
+  <article class="doc" lang="en" dir="ltr" hidden>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: June 2026</p>
+
+    <h2>Who we are</h2>
+    <p>GanBayit (גן־בית) is an app that offers daily developmental activity ideas for babies and toddlers. It is developed and operated by an independent developer ("we", "the developer"). For privacy questions: <a href="mailto:tomeriqo@gmail.com">tomeriqo@gmail.com</a>.</p>
+
+    <h2>The guiding principle: your data stays with you</h2>
+    <p>GanBayit is built around privacy. By default, everything you enter is stored locally on your device only. We do not collect it, we cannot see it, and we do not send it to any server of ours. The app has no user accounts, no usage analytics, no advertising, and no third-party tracking components or SDKs that collect data.</p>
+
+    <h2>What is stored on your device</h2>
+    <ul>
+      <li>Your child's name and date of birth, entered during setup.</li>
+      <li>Personal notes you choose to write alongside activities.</li>
+      <li>Photos you choose to attach to memories (in versions that support this).</li>
+      <li>App preferences, such as the daily reminder time and whether it is on.</li>
+    </ul>
+    <p>This information is used only to show you the content inside the app and to keep your personal development diary.</p>
+
+    <h2>Optional cloud sync</h2>
+    <p>In versions that support syncing across devices, you may choose to store a copy of your data in your own private platform cloud account: on iOS, through your private Apple iCloud account. In that case the data is kept in your private account, protected by the platform, and accessible only to you. Even then, we do not access your data and we do not store it on our servers.</p>
+    <p>Note for Android: when we add sync on Android, it will follow the same principle, storage in your own private cloud account with no access by us. We will update this policy to describe the exact mechanism before the feature is enabled.</p>
+
+    <h2>Feedback (initiated by you)</h2>
+    <p>If you choose to send us feedback from inside the app, your mail app opens with a prepared message. To help us understand the context, the message includes the app version, your device model, and your child's age range. It is sent only if you choose to send it, from your own email account, and it does not include your child's name or your notes.</p>
+
+    <h2>Sharing</h2>
+    <p>If you choose to share a memory or a photo from the app (in versions that support this), you are sending that content to a destination or app you select. Once shared, the content is governed by that service's or recipient's privacy policy and is no longer under our control.</p>
+
+    <h2>Children's information</h2>
+    <p>GanBayit is intended for use by adult parents and caregivers, not by children. The information about your child that you enter is stored on your device (and in your private cloud account, if you enabled sync) and is not collected by us. You, as the parent or guardian, control this information and can delete it at any time.</p>
+
+    <h2>Deleting data and your control</h2>
+    <ul>
+      <li>You can edit or delete your child's details from the Settings screen.</li>
+      <li>Removing the app from your device deletes all local data.</li>
+      <li>If you enabled cloud sync, deleting the data from your private cloud account is done through your platform's cloud settings.</li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>Your data is stored on your device and protected by your operating system's security. With cloud sync, your data is protected by your private cloud account. Please note that no storage method is completely secure, and we cannot guarantee absolute security.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We will update this policy if the app's features change, for example when photos, sync, or sharing are added. The last-updated date will appear at the top of this document, and a material change will also be surfaced inside the app.</p>
+
+    <h2>Contact</h2>
+    <p>For any privacy question, you are welcome to contact us: <a href="mailto:tomeriqo@gmail.com">tomeriqo@gmail.com</a></p>
+  </article>
+
+  <footer>
+    <a href="./index.html">גן־בית</a>
+    <a href="./terms.html">תנאי שימוש / Terms</a>
+    <a href="mailto:tomeriqo@gmail.com">tomeriqo@gmail.com</a>
+  </footer>
+</div>
+<script>
+  function setLang(l){
+    document.documentElement.lang=l;
+    document.documentElement.dir = l==='he'?'rtl':'ltr';
+    document.querySelectorAll('.doc').forEach(function(d){ d.hidden = d.getAttribute('lang')!==l; });
+    document.getElementById('he').setAttribute('aria-pressed', l==='he');
+    document.getElementById('en').setAttribute('aria-pressed', l==='en');
+    try{localStorage.setItem('gb-lang',l);}catch(e){}
+  }
+  try{var L=localStorage.getItem('gb-lang'); if(L==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>

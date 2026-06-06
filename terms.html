@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>גן־בית · תנאי שימוש</title>
+<meta name="description" content="תנאי השימוש של גן־בית. הפעילויות הן הצעות בלבד ואינן תחליף לייעוץ מקצועי.">
+<meta name="color-scheme" content="light dark">
+<script>
+  (function(){try{
+    var t=localStorage.getItem('gb-theme');
+    if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    document.documentElement.setAttribute('data-theme',t);
+  }catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
+<style>
+  :root{
+    color-scheme:light;
+    --paper:#FBF7F1; --card:#FFFFFF; --ink:#2F2C26; --ink2:#6B6458; --ink3:#A89C88;
+    --honey:#E8A33D; --honey700:#B26F12; --hair:#EBE2D1;
+    --font:-apple-system,BlinkMacSystemFont,'Segoe UI',"Heebo",sans-serif;
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1A1714; --card:#221E1A; --ink:#EFE7DA; --ink2:#B8AC99; --ink3:#7C7264;
+    --honey:#F0B95A; --honey700:#F0B95A; --hair:#332C24;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:28px 22px 64px}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .toggle{display:inline-flex;border:1px solid var(--hair);border-radius:999px;overflow:hidden}
+  .toggle button{appearance:none;border:0;background:transparent;color:var(--ink2);font:inherit;font-size:13px;font-weight:700;padding:7px 14px;cursor:pointer}
+  .toggle button[aria-pressed="true"]{background:var(--honey);color:#fff}
+  h1{font-size:26px;margin:6px 0 2px}
+  .updated{color:var(--ink3);font-size:13px;margin:0 0 26px}
+  h2{font-size:18px;margin:30px 0 8px;color:var(--honey700)}
+  p,li{color:var(--ink2);font-size:16px}
+  a{color:var(--honey700)}
+  .doc[hidden]{display:none}
+  .doc[lang="en"]{direction:ltr;text-align:left}
+  footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--hair);color:var(--ink3);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--ink3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="./index.html"><img src="app-icon.png" alt="גן־בית"><span>גן־בית</span></a>
+    <div class="toggle" role="group" aria-label="שפה / Language">
+      <button id="he" aria-pressed="true" onclick="setLang('he')">עברית</button>
+      <button id="en" aria-pressed="false" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+
+  <!-- Hebrew -->
+  <article class="doc" lang="he" dir="rtl">
+    <h1>תנאי שימוש</h1>
+    <p class="updated">עדכון אחרון: יוני 2026</p>
+
+    <h2>קבלת התנאים</h2>
+    <p>השימוש באפליקציה "גן־בית" מהווה הסכמה לתנאים אלה. אם אינכם מסכימים להם, אנא הימנעו מהשימוש באפליקציה.</p>
+
+    <h2>רישיון שימוש</h2>
+    <p>אנו מעניקים לכם רישיון אישי, מוגבל, לא בלעדי ובלתי עביר, להשתמש בגן־בית לשימושכם הפרטי והלא מסחרי, בהתאם לתנאים אלה ולתנאי החנות שממנה הורדתם את האפליקציה.</p>
+
+    <h2>הבהרה חשובה: אינה ייעוץ מקצועי</h2>
+    <p>גן־בית מציעה רעיונות לפעילויות התפתחותיות, להעשרה, ללמידה דרך משחק ולזמן איכות משותף. התוכן אינו מהווה ייעוץ רפואי, התפתחותי, חינוכי, פסיכולוגי או מקצועי אחר, ואינו תחליף לייעוץ, אבחון או טיפול של רופא/ת ילדים, אחות טיפת חלב או איש/אשת מקצוע מוסמך/ת. בכל שאלה או חשש בנוגע להתפתחות, לבריאות או להתנהגות הילד/ה, יש לפנות לאיש מקצוע.</p>
+
+    <h2>אחריות המשתמש</h2>
+    <p>הפעילויות הן הצעות בלבד. ההחלטה אילו פעילויות לבצע, מתי וכיצד, נתונה כולה לשיקול דעתכם ובאחריותכם. יש לבצע כל פעילות בהשגחת מבוגר/ת, להתאים אותה לגיל וליכולות של התינוק/ת, ולוודא סביבה בטוחה.</p>
+
+    <h2>תוכן שאתם יוצרים</h2>
+    <p>ההערות והתמונות שאתם מזינים שייכים לכם. אתם אחראים לתוכן שאתם יוצרים ולכל תוכן שאתם בוחרים לשתף עם אחרים.</p>
+
+    <h2>קניין רוחני</h2>
+    <p>האפליקציה, העיצוב, והתוכן המקצועי שבה (רעיונות הפעילויות, הטקסטים והגרפיקה) הם רכוש המפתח ומוגנים בזכויות יוצרים ובדינים אחרים. אין להעתיק, להפיץ, או לעשות בהם שימוש מסחרי ללא רשות מראש ובכתב.</p>
+
+    <h2>ללא אחריות</h2>
+    <p>האפליקציה ניתנת "כפי שהיא" ו"כפי שהיא זמינה", ללא אחריות מכל סוג, מפורשת או משתמעת. איננו מתחייבים שהאפליקציה תהיה נטולת תקלות, זמינה ברציפות, או מתאימה לכל מטרה מסוימת.</p>
+
+    <h2>הגבלת אחריות</h2>
+    <p>במידה המרבית המותרת על פי דין, לא נישא באחריות לכל נזק ישיר, עקיף, מקרי, מיוחד או תוצאתי הנובע מהשימוש באפליקציה או מהסתמכות על תוכנה. האחריות על ביצוע הפעילויות ועל שלום התינוק/ת מוטלת עליכם בלבד.</p>
+
+    <h2>שינויים</h2>
+    <p>אנו עשויים לעדכן את האפליקציה ואת התנאים מעת לעת. המשך השימוש לאחר עדכון התנאים מהווה הסכמה לתנאים המעודכנים.</p>
+
+    <h2>דין חל וסמכות שיפוט</h2>
+    <p>על תנאים אלה יחולו דיני מדינת ישראל, ולבתי המשפט המוסמכים במחוז תל אביב תהיה סמכות השיפוט הבלעדית בכל מחלוקת הנוגעת להם.</p>
+
+    <h2>יצירת קשר</h2>
+    <p>בכל שאלה בנוגע לתנאים אלה: <a href="mailto:tomeriqo@gmail.com">tomeriqo@gmail.com</a></p>
+  </article>
+
+  <!-- English -->
+  <article class="doc" lang="en" dir="ltr" hidden>
+    <h1>Terms of Use</h1>
+    <p class="updated">Last updated: June 2026</p>
+
+    <h2>Acceptance of these terms</h2>
+    <p>Using the GanBayit (גן־בית) app constitutes your acceptance of these terms. If you do not agree to them, please do not use the app.</p>
+
+    <h2>License to use</h2>
+    <p>We grant you a personal, limited, non-exclusive, and non-transferable license to use GanBayit for your private, non-commercial use, in accordance with these terms and with the terms of the store from which you downloaded the app.</p>
+
+    <h2>Important notice: not professional advice</h2>
+    <p>GanBayit offers ideas for developmental activities, for enrichment, learning through play, and quality time together. The content does not constitute medical, developmental, educational, psychological, or any other professional advice, and is not a substitute for the advice, diagnosis, or treatment of a pediatrician, a maternal-and-child health nurse, or a qualified professional. For any question or concern regarding your child's development, health, or behavior, please consult a professional.</p>
+
+    <h2>User responsibility</h2>
+    <p>The activities are suggestions only. The decision which activities to do, when, and how, is entirely at your discretion and responsibility. Each activity should be performed under adult supervision, adapted to your child's age and abilities, and carried out in a safe environment.</p>
+
+    <h2>Content you create</h2>
+    <p>The notes and photos you enter belong to you. You are responsible for the content you create and for any content you choose to share with others.</p>
+
+    <h2>Intellectual property</h2>
+    <p>The app, its design, and its professional content (the activity ideas, texts, and graphics) are the property of the developer and are protected by copyright and other laws. They may not be copied, distributed, or used commercially without prior written permission.</p>
+
+    <h2>No warranty</h2>
+    <p>The app is provided "as is" and "as available", without warranty of any kind, express or implied. We do not warrant that the app will be error-free, continuously available, or fit for any particular purpose.</p>
+
+    <h2>Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, or consequential damage arising from the use of the app or from reliance on its content. Responsibility for performing the activities and for your child's wellbeing rests solely with you.</p>
+
+    <h2>Changes</h2>
+    <p>We may update the app and these terms from time to time. Continued use after the terms are updated constitutes acceptance of the updated terms.</p>
+
+    <h2>Governing law and jurisdiction</h2>
+    <p>These terms are governed by the laws of the State of Israel, and the competent courts in the Tel Aviv district shall have exclusive jurisdiction over any dispute relating to them.</p>
+
+    <h2>Contact</h2>
+    <p>For any question regarding these terms: <a href="mailto:tomeriqo@gmail.com">tomeriqo@gmail.com</a></p>
+  </article>
+
+  <footer>
+    <a href="./index.html">גן־בית</a>
+    <a href="./privacy.html">מדיניות פרטיות / Privacy</a>
+    <a href="mailto:tomeriqo@gmail.com">tomeriqo@gmail.com</a>
+  </footer>
+</div>
+<script>
+  function setLang(l){
+    document.documentElement.lang=l;
+    document.documentElement.dir = l==='he'?'rtl':'ltr';
+    document.querySelectorAll('.doc').forEach(function(d){ d.hidden = d.getAttribute('lang')!==l; });
+    document.getElementById('he').setAttribute('aria-pressed', l==='he');
+    document.getElementById('en').setAttribute('aria-pressed', l==='en');
+    try{localStorage.setItem('gb-lang',l);}catch(e){}
+  }
+  try{var L=localStorage.getItem('gb-lang'); if(L==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>

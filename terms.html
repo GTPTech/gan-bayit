@@ -28,7 +28,8 @@
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased}
   .wrap{max-width:720px;margin:0 auto;padding:28px 22px 64px}
-  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+  /* Header chrome stays FIXED regardless of content language (logo right, toggle left). */
+  .topbar{direction:rtl;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800}
   .brand img{width:34px;height:34px;border-radius:9px}
   .toggle{display:inline-flex;border:1px solid var(--hair);border-radius:999px;overflow:hidden}
@@ -39,9 +40,11 @@
   h2{font-size:18px;margin:30px 0 8px;color:var(--honey700)}
   p,li{color:var(--ink2);font-size:16px}
   a{color:var(--honey700)}
+  /* Only the readable content reflows for the chosen language. */
   .doc[hidden]{display:none}
+  .doc[lang="he"]{direction:rtl;text-align:right}
   .doc[lang="en"]{direction:ltr;text-align:left}
-  footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--hair);color:var(--ink3);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
+  footer{direction:rtl;margin-top:48px;padding-top:20px;border-top:1px solid var(--hair);color:var(--ink3);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
   footer a{color:var(--ink3)}
 </style>
 </head>
@@ -141,8 +144,7 @@
 </div>
 <script>
   function setLang(l){
-    document.documentElement.lang=l;
-    document.documentElement.dir = l==='he'?'rtl':'ltr';
+    document.documentElement.lang=l; /* a11y only; page direction/chrome stays fixed */
     document.querySelectorAll('.doc').forEach(function(d){ d.hidden = d.getAttribute('lang')!==l; });
     document.getElementById('he').setAttribute('aria-pressed', l==='he');
     document.getElementById('en').setAttribute('aria-pressed', l==='en');
